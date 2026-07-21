@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>keel social card</title>
+<style>
+  :root{
+    --bg:#0a0c10; --panel:#0d1017; --border:#1f2430;
+    --fg:#e6edf3; --muted:#7d8590; --soft:#9aa5ce;
+    --blue:#6ea8fe; --purple:#a78bfa;
+    --chip-bg:#161b26; --chip-fg:#9aa5ce; --chip-border:#262d3a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#05070b;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.4}
+
+  .card{
+    width:1280px;height:640px;
+    background:
+      radial-gradient(1100px 500px at 88% -10%, rgba(110,168,254,0.10), transparent 60%),
+      radial-gradient(900px 500px at -5% 115%, rgba(167,139,250,0.12), transparent 60%),
+      var(--bg);
+    border:1px solid var(--border);
+    position:relative;overflow:hidden;display:flex;color:var(--fg);
+  }
+  .card::before{
+    content:"";position:absolute;inset:0;opacity:.35;
+    background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(900px 600px at 70% 30%,#000,transparent 75%);
+            mask-image:radial-gradient(900px 600px at 70% 30%,#000,transparent 75%);
+  }
+  .accent{width:10px;height:100%;background:linear-gradient(180deg,var(--purple),var(--blue));flex:none}
+  .inner{position:relative;z-index:1;padding:72px 80px;display:flex;flex-direction:column;width:100%}
+
+  .top{display:flex;align-items:center;gap:14px;margin-bottom:auto}
+  .dot{width:10px;height:10px;border-radius:50%;background:var(--blue);box-shadow:0 0 16px var(--blue)}
+  .handle{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:20px;color:var(--soft);letter-spacing:.2px}
+
+  h1{font-size:118px;line-height:1;font-weight:800;letter-spacing:-2px;
+     background:linear-gradient(120deg,#fff 28%,var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .role{font-size:36px;font-weight:700;color:var(--blue);margin-top:10px}
+  .desc{font-size:29px;color:var(--soft);max-width:1000px;margin-top:22px;font-weight:400}
+
+  .chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  .chips span{font-size:21px;color:var(--chip-fg);background:var(--chip-bg);
+    border:1px solid var(--chip-border);border-radius:999px;padding:9px 18px;
+    font-family:ui-monospace,"SF Mono",Menlo,monospace}
+
+  .foot{margin-top:auto;display:flex;gap:30px;align-items:center;color:var(--muted);font-size:22px;padding-top:30px}
+  .foot .sep{color:var(--border)}
+  .foot b{color:var(--soft);font-weight:600}
+  .foot code{font-family:ui-monospace,"SF Mono",Menlo,monospace;color:var(--blue)}
+</style>
+</head>
+<body>
+<div class="card" id="card">
+  <div class="accent"></div>
+  <div class="inner">
+    <div class="top"><span class="dot"></span><span class="handle">github.com/sudhanshu1402/keel</span></div>
+    <h1>keel</h1>
+    <div class="role">Durable execution for AI agents</div>
+    <div class="desc">Crash-proof TypeScript workflows that resume exactly where they left off. Zero cloud, zero cost, zero dependencies.</div>
+    <div class="chips"><span>TypeScript</span><span>Durable Execution</span><span>Ollama</span><span>Local-first</span><span>Zero-deps</span></div>
+    <div class="foot"><b><code>npm i @sudhanshu1402/keel</code></b><span class="sep">|</span><b>MIT</b></div>
+  </div>
+</div>
+</body>
+</html>

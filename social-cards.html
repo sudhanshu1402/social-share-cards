@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Social preview cards — sudhanshu1402</title>
+<style>
+  :root{
+    --bg:#0a0c10; --panel:#0d1017; --border:#1f2430;
+    --fg:#e6edf3; --muted:#7d8590; --soft:#9aa5ce;
+    --blue:#6ea8fe; --purple:#a78bfa;
+    --chip-bg:#161b26; --chip-fg:#9aa5ce; --chip-border:#262d3a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:#05070b; color:var(--fg);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    padding:40px; line-height:1.4;
+  }
+  .guide{
+    max-width:1280px;margin:0 auto 36px;padding:20px 24px;
+    background:#0d1017;border:1px solid var(--border);border-radius:10px;
+    color:var(--soft);font-size:14px;
+  }
+  .guide h2{color:var(--fg);font-size:16px;margin-bottom:10px}
+  .guide code{font-family:ui-monospace,"SF Mono",Menlo,monospace;color:var(--blue);background:#11151d;padding:1px 6px;border-radius:4px}
+  .guide ol{margin:8px 0 0 18px}
+  .guide li{margin:4px 0}
+
+  .cap{max-width:1280px;margin:0 auto;color:var(--muted);
+    font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:13px;
+    padding:24px 0 8px;}
+  .cap b{color:var(--purple)}
+
+  /* Each card is EXACTLY 1280x640 — the GitHub social-preview size. */
+  .card{
+    width:1280px;height:640px;margin:0 auto;
+    background:
+      radial-gradient(1100px 500px at 88% -10%, rgba(110,168,254,0.10), transparent 60%),
+      radial-gradient(900px 500px at -5% 115%, rgba(167,139,250,0.12), transparent 60%),
+      var(--bg);
+    border:1px solid var(--border);
+    position:relative;overflow:hidden;
+    display:flex;
+  }
+  .card::before{ /* subtle grid */
+    content:"";position:absolute;inset:0;opacity:.35;
+    background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(900px 600px at 70% 30%,#000,transparent 75%);
+            mask-image:radial-gradient(900px 600px at 70% 30%,#000,transparent 75%);
+  }
+  .accent{width:10px;height:100%;background:linear-gradient(180deg,var(--purple),var(--blue));flex:none}
+  .inner{position:relative;z-index:1;padding:72px 80px;display:flex;flex-direction:column;width:100%}
+
+  .top{display:flex;align-items:center;gap:14px;margin-bottom:auto}
+  .dot{width:10px;height:10px;border-radius:50%;background:var(--blue);box-shadow:0 0 16px var(--blue)}
+  .handle{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:20px;color:var(--soft);letter-spacing:.2px}
+
+  h1{font-size:76px;line-height:1.02;font-weight:800;letter-spacing:-1.5px;
+     background:linear-gradient(120deg,#fff 30%,var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .role{font-size:34px;font-weight:700;color:var(--blue);margin-top:6px}
+  .desc{font-size:30px;color:var(--soft);max-width:980px;margin-top:22px;font-weight:400}
+
+  .chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+  .chips span{font-size:21px;color:var(--chip-fg);background:var(--chip-bg);
+    border:1px solid var(--chip-border);border-radius:999px;padding:9px 18px;
+    font-family:ui-monospace,"SF Mono",Menlo,monospace}
+
+  .foot{margin-top:auto;display:flex;gap:30px;align-items:center;color:var(--muted);font-size:22px;padding-top:30px}
+  .foot .sep{color:var(--border)}
+  .foot b{color:var(--soft);font-weight:600}
+</style>
+</head>
+<body>
+
+<div class="guide">
+  <h2>How to export these as PNGs (GitHub social preview = 1280×640)</h2>
+  Each card below is exactly <code>1280×640</code>. To upload one: <b>repo → Settings → Social preview → Edit → Upload an image</b> (profile card goes on the <code>sudhanshu1402/sudhanshu1402</code> repo).
+  <ol>
+    <li><b>Easiest:</b> open this file in Chrome, right-click a card → "Capture node screenshot" (DevTools → Elements → pick the <code>.card</code> → ⋮ → Capture node screenshot). Exports the exact 1280×640 PNG.</li>
+    <li><b>Or</b> macOS <code>⌘⇧4</code>, drag the card bounds (the bordered box).</li>
+    <li><b>Or</b> ask me to render all 7 to PNG via the browser tool.</li>
+  </ol>
+</div>
+
+<!-- 1. PROFILE -->
+<div class="cap">→ <b>profile.png</b> &nbsp;·&nbsp; upload on repo <code>sudhanshu1402/sudhanshu1402</code></div>
+<div class="card">
+  <div class="accent"></div>
+  <div class="inner">
+    <div class="top"><span class="dot"></span><span class="handle">github.com/sudhanshu1402</span></div>
+    <h1>Sudhanshu Singh</h1>
+    <div class="role">Backend Engineer</div>
+    <div class="desc">Distributed systems, authentication infrastructure, observability tooling, and LLM pipelines. Built with TypeScript and Node.js.</div>
+    <div class="foot"><b>linkedin.com/in/sudhanshusingh1402</b><span class="sep">|</span><b>sudhanshu1402.github.io</b></div>
+  </div>
+</div>
+
+<!-- 2. distributed-queue-engine -->
+<div class="cap">→ <b>distributed-queue-engine.png</b></div>
+<div class="card">
+  <div class="accent"></div>
+  <div class="inner">
+    <div class="top"><span class="dot"></span><span class="handle">sudhanshu1402/distributed-queue-engine</span></div>
+    <h1>Distributed Queue Engine</h1>
+    <div class="desc">Redis + BullMQ job processing: priority queues, exponential-backoff retries, dead-letter handling, and independently scalable worker processes.</div>
+    <div class="chips"><span>TypeScript</span><span>Redis</span><span>BullMQ</span><span>Docker</span></div>
+    <div class="foot"><b>Production-grade background processing</b></div>
+  </div>
+</div>
+
+<!-- 3. enterprise-auth-stack -->
+<div class="cap">→ <b>enterprise-auth-stack.png</b></div>
+<div class="card">
+  <div class="accent"></div>
+  <div class="inner">
+    <div class="top"><span class="dot"></span><span class="handle">sudhanshu1402/enterprise-auth-stack</span></div>
+    <h1>Enterprise Auth Stack</h1>
+    <div class="desc">B2B SSO gateway: SAML 2.0 assertions to unified JWTs, SCIM 2.0 provisioning, multi-tenant isolation, just-in-time role mapping via AWS Secrets Manager.</div>
+    <div class="chips"><span>TypeScript</span><span>Passport.js</span><span>SAML 2.0</span><span>SCIM</span><span>AWS</span></div>
+    <div class="foot"><b>Multi-tenant B2B authentication gateway</b></div>
+  </div>
+</div>
+
+<!-- 4. otel-sdk-node -->
+<div class="cap">→ <b>otel-sdk-node.png</b></div>
+<div class="card">
+  <div class="accent"></div>
+  <div class="inner">
+    <div class="top"><span class="dot"></span><span class="handle">sudhanshu1402/otel-sdk-node</span></div>
+    <h1>OpenTelemetry SDK for Node</h1>
+    <div class="desc">Zero-code distributed tracing: OTLP/gRPC trace export, Pino log correlation with trace_id injection, Prometheus metrics, vendor-agnostic collection.</div>
+    <div class="chips"><span>TypeScript</span><span>OpenTelemetry</span><span>gRPC</span><span>Pino</span><span>Prometheus</span></div>
+    <div class="foot"><b>Production observability wrapper</b></div>
+  </div>
+</div>
+
+<!-- 5. multi-region-mongo-patterns -->
+<div class="cap">→ <b>multi-region-mongo-patterns.png</b></div>
+<div class="card">
+  <div class="accent"></div>
+  <div class="inner">
+    <div class="top"><span class="dot"></span><span class="handle">sudhanshu1402/multi-region-mongo-patterns</span></div>
+    <h1>Multi-Region Mongo Patterns</h1>
+    <div class="desc">MongoDB Atlas zone sharding for GDPR data residency: compound shard keys, tag-range routing, nearest-read preference, model-level region enforcement.</div>
+    <div class="chips"><span>MongoDB</span><span>Atlas</span><span>Mongoose</span><span>GDPR</span></div>
+    <div class="foot"><b>Compliant geographic data localization</b></div>
+  </div>
+</div>
+
+<!-- 6. llm-assessment-pipeline -->
+<div class="cap">→ <b>llm-assessment-pipeline.png</b></div>
+<div class="card">
+  <div class="accent"></div>
+  <div class="inner">
+    <div class="top"><span class="dot"></span><span class="handle">sudhanshu1402/llm-assessment-pipeline</span></div>
+    <h1>LLM Assessment Pipeline</h1>
+    <div class="desc">Fault-tolerant LangChain orchestration: dual-model fallback (GPT-4o → Gemini), Zod-validated structured output, dead-letter queue on final failure.</div>
+    <div class="chips"><span>LangChain</span><span>OpenAI</span><span>Gemini</span><span>Zod</span></div>
+    <div class="foot"><b>Resilient structured-generation pipeline</b></div>
+  </div>
+</div>
+
+<!-- 7. system-design-portal -->
+<div class="cap">→ <b>system-design-portal.png</b></div>
+<div class="card">
+  <div class="accent"></div>
+  <div class="inner">
+    <div class="top"><span class="dot"></span><span class="handle">sudhanshu1402/system-design-portal</span></div>
+    <h1>System Design Portal</h1>
+    <div class="desc">Architecture write-ups with Mermaid diagrams and design reasoning for each production system — built with Next.js + Nextra (MDX).</div>
+    <div class="chips"><span>Next.js</span><span>Nextra</span><span>MDX</span><span>Mermaid</span></div>
+    <div class="foot"><b>sudhanshu1402.github.io/system-design-portal</b></div>
+  </div>
+</div>
+
+</body>
+</html>
