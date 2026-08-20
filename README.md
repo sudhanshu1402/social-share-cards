@@ -4,7 +4,11 @@ Static HTML templates that render 1280x640 GitHub social-preview images for my r
 
 GitHub shows a social preview card when a repo link is shared on Twitter, LinkedIn, or Slack. The default is auto-generated and looks identical for everyone. These are hand-built replacements: plain HTML sized to exactly 1280x640, no build step, no dependencies, just CSS.
 
-Rendered PNGs are in `exports/`.
+Rendered PNGs are in `exports/`. Two of them:
+
+![Profile card](exports/profile.png)
+
+![keel card](exports/keel.png)
 
 ## Files
 
@@ -24,6 +28,16 @@ Open the HTML file, then either:
 2. `Cmd+Shift+4` and drag the card bounds.
 
 Upload at repo Settings, Social preview, Edit.
+
+Stale exports are the failure mode here: the text lives in HTML, the uploaded image does not. After editing a card, re-export it. `exports/otel-sdk-node.png` and `exports/llm-assessment-pipeline.png` are currently behind their templates — the wording was corrected to match the code and they have not been re-shot.
+
+## Checking
+
+```bash
+python3 scripts/check-cards.py
+```
+
+Confirms every PNG in `exports/` is exactly 1280x640, and that the filenames the `.cap` lines declare and the files in `exports/` are the same set. GitHub wants 2:1 and crops anything else, so an off-aspect export loses content. `.github/workflows/cards.yml` runs it on push and pull request. It cannot tell whether an image's text matches its template — that part is on you.
 
 ## Editing
 
