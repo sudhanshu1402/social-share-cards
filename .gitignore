@@ -8,6 +8,7 @@ build/
 .next/
 out/
 coverage/
+__pycache__/
 *.log
 .DS_Store
 **/.DS_Store

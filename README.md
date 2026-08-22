@@ -17,19 +17,25 @@ Rendered PNGs are in `exports/`. Two of them:
 | `templates/social-cards.html` | Seven cards on one page: profile plus one per project repo |
 | `templates/keel-card.html` | Standalone card for `keel`, bigger title treatment |
 | `exports/*.png` | The exported images |
+| `scripts/export-cards.py` | Renders any card to `exports/` in headless Chrome |
+| `scripts/check-cards.py` | Checks every export is 1280x640 and matches a declared card |
 
 The seven: profile (goes on `sudhanshu1402/sudhanshu1402`), distributed-queue-engine, enterprise-auth-stack, otel-sdk-node, multi-region-mongo-patterns, llm-assessment-pipeline, system-design-portal.
 
 ## Exporting
 
-Open the HTML file, then either:
+```bash
+python3 scripts/export-cards.py                  # every card
+python3 scripts/export-cards.py otel-sdk-node    # one, by exported filename
+```
 
-1. DevTools, Elements, select the `.card` element, kebab menu, "Capture node screenshot". Gives an exact 1280x640 PNG.
-2. `Cmd+Shift+4` and drag the card bounds.
+It pulls each card out of the template, renders it alone in headless Chrome at 1280x640, and writes `exports/<name>.png`. No dependencies beyond Chrome at the standard macOS path. New headless does not always exit after taking the screenshot, so the script waits for the PNG to stop growing and then ends the process itself.
+
+By hand, if you would rather: open the HTML, DevTools, Elements, select the `.card` element, kebab menu, "Capture node screenshot".
 
 Upload at repo Settings, Social preview, Edit.
 
-Stale exports are the failure mode here: the text lives in HTML, the uploaded image does not. After editing a card, re-export it. `exports/otel-sdk-node.png` and `exports/llm-assessment-pipeline.png` are currently behind their templates — the wording was corrected to match the code and they have not been re-shot.
+Stale exports are the failure mode here: the text lives in HTML, the uploaded image does not. After editing a card, re-export it.
 
 ## Checking
 
