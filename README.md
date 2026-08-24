@@ -14,13 +14,13 @@ Rendered PNGs are in `exports/`. Two of them:
 
 | File | Renders |
 |---|---|
-| `templates/social-cards.html` | Seven cards on one page: profile plus one per project repo |
+| `templates/social-cards.html` | Eight cards on one page: profile plus one per project repo |
 | `templates/keel-card.html` | Standalone card for `keel`, bigger title treatment |
 | `exports/*.png` | The exported images |
 | `scripts/export-cards.py` | Renders any card to `exports/` in headless Chrome |
 | `scripts/check-cards.py` | Checks every export is 1280x640 and matches a declared card |
 
-The seven: profile (goes on `sudhanshu1402/sudhanshu1402`), distributed-queue-engine, enterprise-auth-stack, otel-sdk-node, multi-region-mongo-patterns, llm-assessment-pipeline, system-design-portal.
+The eight: profile (goes on `sudhanshu1402/sudhanshu1402`), distributed-queue-engine, enterprise-auth-stack, otel-sdk-node, multi-region-mongo-patterns, llm-assessment-pipeline, system-design-portal, receipts.
 
 ## Exporting
 
@@ -51,7 +51,7 @@ Everything is inline HTML and CSS. Edit the `<h1>`, `.desc`, `.chips`, and `.foo
 
 ## Scope
 
-A small personal utility, not a library. No generator, no CLI, no template engine. For seven cards, hand-editing HTML beats building a pipeline. If the repo count grows a lot, data-driven generation would start making sense.
+A small personal utility, not a library. No generator, no CLI, no template engine. For eight cards, hand-editing HTML beats building a pipeline. If the repo count grows a lot, data-driven generation would start making sense.
 
 ## License
 
