@@ -1,4 +1,8 @@
-# social-share-cards
+<div align="center">
+
+<img src="assets/hero.svg" width="100%" alt="social-share-cards: CARDS printed as a two-ink riso poster, with two preview cards at 1280 by 640, a 2 to 1 ratio. Hand-built repo preview cards in plain HTML and CSS, no build step." />
+
+</div>
 
 **Nine hand-built 1280x640 social preview cards for my repos, from plain HTML and CSS. No build step, no dependencies.**
 
@@ -50,6 +54,10 @@ Inline HTML and CSS throughout. Edit the `<h1>`, `.desc`, `.chips` and `.foot` b
 ## Scope
 
 A small personal utility, not a library. No generator, no CLI, no template engine. For ten cards, hand-editing HTML beats building a pipeline. If the repo count grows a lot, data-driven generation starts making sense.
+
+---
+
+<sub>More from [sudhanshu1402](https://github.com/sudhanshu1402): [keel](https://github.com/sudhanshu1402/keel) · [nocap](https://github.com/sudhanshu1402/nocap) · [receipts](https://github.com/sudhanshu1402/receipts) · [enterprise-auth-stack](https://github.com/sudhanshu1402/enterprise-auth-stack) · [distributed-queue-engine](https://github.com/sudhanshu1402/distributed-queue-engine) · [multi-region-mongo-patterns](https://github.com/sudhanshu1402/multi-region-mongo-patterns) · [otel-sdk-node](https://github.com/sudhanshu1402/otel-sdk-node) · [llm-assessment-pipeline](https://github.com/sudhanshu1402/llm-assessment-pipeline) · [system-design-portal](https://github.com/sudhanshu1402/system-design-portal). Portfolio: [sudhanshu1402.github.io](https://sudhanshu1402.github.io).</sub>
 
 ## License
 
